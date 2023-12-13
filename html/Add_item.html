@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant</title>
+    <script type="text/javascript" src="..\jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+    <link rel="stylesheet" type="text/css" href="..\css\index.css">
+    <link rel="stylesheet" type="text/css" href="..\css\checkout.css">
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    <script src="..\script\index.js"></script>
+    <script src="..\script\checkout.js"></script>
+
+
+</head>
+
+<!--order.html, checkout.html, food1.html  0 use, just for design page. 
+    check.html(save successful and fail case)
+    remember change var,class,id name
+    all CSS design is Arrange in order-->
+
+<body>
+    <div class="page-container">
+        <div class="content-container"> <!-- content-container (logo, title, header,login button)-->
+
+            <div class="title-image">
+                <img src="..\image\restaurant_title.png" alt="">
+            </div>
+            <div class="site-branding-text">
+                <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+            </div>
+            <div class="header-container">
+                <div id="header">
+
+
+                    <div class="Login-btn">
+                        <a href="login.html">
+                            <button class="login" id="login-btn">Login</button>
+                        </a>
+                        <img src="..\image\profile.png" alt="profile" class="profile-ico" id="profile-ico"
+                            onclick="togglePopup()"
+                            onkeydown="if(event.key === 'Enter' || event.key === ' ') { togglePopup(); event.preventDefault(); }"
+                            tabindex="0">
+                        <div class="profile" id="profile">
+                            <label id="nickname">Hi, </label>
+
+                            <a href="#" onclick="showProfile()">
+                                <button class="view-profile" id="view-profile">View Profile</button>
+                            </a>
+
+                            <a href="Menu_Management.html">
+                                <button class="view-profile" id="view-profile">Edit Menu</button>
+                            </a>
+
+                            <a href="Order_Management.html">
+                                <button class="view-profile" id="view-profile">Order Management</button>
+                            </a>
+
+                            <a href="#">
+                                <button class="logout" id="logout_button">Logout</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!----------------------------------------------------------->
+        <div id="food-container"> <!-- food-container (menu, food, cart )-->
+            <div class="main">
+                <div class="food-category">
+                    <a href="Menu_Management.html" id="home">Edit & PreView</a>
+
+                    <a href="add_item.html" id="new_food">Add New Food</a>
+                </div>
+
+                <div class="food-main"> <!-- food-main (food design, checkout form, order list)-->
+                    <div class="profile-section" id="profile-section">
+                    </div>
+
+
+                    <h1>Add New Item</h1>
+                        
+                    <div class="add-item-form">
+                        <form id="add-item-form">
+                            <label for="item-name">Item Name:</label>
+                            <input type="text" id="item-name" name="item-name" placeholder="e.g., Mushroom Risotto">
+
+                            <label for="item-price">Item Price:</label>
+                            <input type="text" id="item-price" name="item-price" placeholder="e.g., 13">
+
+                            <label for="item-description">Item Description:</label>
+                            <input type="text" id="item-description" name="item-description" placeholder="e.g., Creamy mushroom risotto with parmesan cheese">
+
+                            <label for="item-image">Item Image:</label>
+                            <input type="file" id="item-image" name="item-image" accept="image/*">
+
+                            <br/>
+                            <br />
+                            <button type="button" id="add_btn">Add Item</button>
+                            <button type="button" id="Clear_btn">Clear</button>
+                        </form>
+
+    <footer> <!-- footer-->
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+    </footer>
+
+    </div>
+
+</body>
+
+</html>
+
+<!-- add_to_cart ref= https://www.flaticon.com/free-icon/add-to-cart_3523885 -->
+<!-- T&C ref = https://www.flaticon.com/free-icon/user_8005815?term=accept&page=1&position=29&origin=search&related_id=8005815-->
+<!--profile ref = https://www.flaticon.com/free-icon/account_3033143?term=profile&page=1&position=11&origin=search&related_id=3033143-->

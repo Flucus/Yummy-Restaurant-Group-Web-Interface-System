@@ -1,0 +1,9 @@
+"email": "kelvin@vtc.com",
+"password": "Kelvin123",
+
+
+"email": "soman@vtc.com"
+"password": "Soman123"
+
+"email": "oscar@vtc.com",
+"password": "Oscar123",

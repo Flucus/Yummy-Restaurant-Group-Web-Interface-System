@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata and Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant - Delivery Personnel Register</title>
+
+    <!-- External Stylesheets and Favicon -->
+    <link rel="stylesheet" type="text/css" href="..\css\register_user.css">
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+
+    <!-- External JavaScript File -->
+    <script src="..\script\register.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="title-image">
+        <img src="..\image\restaurant_title.png" alt="">
+    </div>
+    <div class="site-branding-text">
+        <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+    </div>
+
+    <!-- Main Content Container -->
+    <div id="main-container">
+        <div id="form-container">
+            <div id="content">
+                <!-- Back Button -->
+                <div class="back">
+                    <a href="register.html">
+                        <img src="..\image\back.png" alt="back">
+                    </a>
+                </div>
+
+                <!-- Registration Form -->
+                <span class="title-text">Delivery Register</span>
+                <form id="register-form">
+                    <div class="field">
+                        <input required="" type="text" id="name">
+                        <label for="name">Name</label>
+                    </div>
+
+                    <div class="field">
+                        <input required="" type="text" id="nickname">
+                        <label for="nickname">Nickname</label>
+                    </div>
+
+                    <div class="field">
+                        <input required="" type="password" id="password">
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="field">
+                        <input required="" type="password" id="re-password">
+                        <label for="re-password">Enter Your Password Again</label>
+                    </div>
+
+                    <div class="field">
+                        <input required="" type="text" id="phone">
+                        <label for="phone">Phone Number</label>
+                    </div>
+
+                    <div class="field">
+                        <input required="" type="text" id="email">
+                        <label for="email">Email</label>
+                    </div>
+
+                    <!-- Accept Rules and Conditions -->
+                    <div id="action">
+                        <label>
+                            <input type="checkbox" id="acceptRules">
+                            <a href="T&C.html" target="_blank">Accept rules and conditions
+                                <img src="..\image\T&C.png" alt="add_cart">
+                            </a>
+                        </label>
+                    </div>
+
+                    <!-- Registration Submit Button -->
+                    <button id="register">Submit</button>
+
+                    <!-- Already Have an Account -->
+                    <div id="signup">Already have an account?
+                        <a href="login.html">Login Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

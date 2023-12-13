@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata and Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant - Login</title>
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    
+    <!-- Stylesheets and JavaScript -->
+    <link rel="stylesheet" type="text/css" href="..\css\login.css">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+    <script src="..\script\login.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="title-image">
+        <img src="..\image\restaurant_title.png" alt="">
+    </div>
+    <div class="site-branding-text">
+        <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+    </div>
+
+    <!-- Main Container -->
+    <div id="main-container">
+        <!-- Form Container -->
+        <div id="form-container">
+            <div id="content">
+                <!-- Back to Home Link -->
+                <div class="back"><a href="index.html"><img src="..\image\back.png" alt="Back to Home"></a></div>
+                <!-- Title -->
+                <span class="title-text">Login</span>
+
+                <!-- Login Form -->
+                <form id="login-form">
+                    <!-- Email Input -->
+                    <div class="field">
+                        <input required="" type="text" id="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <!-- Password Input -->
+                    <div class="field">
+                        <input required="" type="password" id="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <!-- Remember Me Checkbox and Forgot Password Link -->
+                    <div id="action">
+                        <label><input type="checkbox">Remember me</label>
+                        <a id="forget" href="#">Forgot password?</a>
+                    </div>
+                    <!-- Login Button -->
+                    <button id="login-btn">Login</button>
+                    <!-- Signup Link -->
+                    <div id="signup">Don't have an Account?
+                        <a href="register.html">Sign up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Copyright Information -->
+        <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>

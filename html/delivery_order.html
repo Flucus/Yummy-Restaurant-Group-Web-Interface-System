@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant</title>
+    <script type="text/javascript" src="..\jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+    <link rel="stylesheet" type="text/css" href="..\css\index.css">
+    <link rel="stylesheet" type="text/css" href="..\css\checkout.css">
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    <script src="..\script\index.js"></script>
+    <script src="..\script\checkout.js"></script>
+
+
+</head>
+
+
+<body>
+    <div class="page-container">
+        <div class="content-container"> <!-- content-container (logo, title, header,login button)-->
+
+            <div class="title-image">
+                <img src="..\image\restaurant_title.png" alt="">
+            </div>
+            <div class="site-branding-text">
+                <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+            </div>
+            <div class="header-container">
+                <div id="header">
+
+
+                    <div class="Login-btn">
+                        <img src="..\image\profile.png" alt="icon" class="icon" id="icon">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div id="contactModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Contact</h2>
+                <form id="contactForm">
+                    <!-- Add form fields for user input (e.g., name, email, message) -->
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                    <br />
+                    <br />
+                    <button type="button">Call Customer</button>
+
+                </form>
+            </div>
+        </div>
+
+        <!----------------------------------------------------------->
+        <div id="food-container"> <!-- food-container (menu, food, cart )-->
+            <div class="main">
+                <div class="food-category">
+                    <a href="delivery_main.html">Home</a>
+                    <br />
+                    <a href="#mu-order1">Order 1</a>
+                    <a href="#mu-order2">Order 2</a>
+                    <a href="#mu-order3">Order 3</a>
+                    <a href="delivery_history.html">History</a>
+
+                </div>
+
+                <div class="food-main"> <!-- food-main (food design, checkout form, order list)-->
+                    <div class="profile-section" id="profile-section">
+                    </div>
+                    <h2>Order Accepted</h2>
+
+                    <div class="order" data-order-number="1">
+                        <a id="mu-order1"></a>
+                        <h2>Order 1</h2>
+                        <p><strong>Order ID:</strong> 10104</p>
+                        <p><strong>Status:</strong> Waitting to Accept</p>
+                        <p><strong>Time:</strong> October 24, 2023 1:00 PM</p>
+                        <p><strong>Delivery Address:</strong> 56 Bute St, Kowloon, Hong Kong</p>
+                        <img src="..\image\map1.png" width="500" height="300">
+                        <br>
+
+                        <div class="order-food-list">
+                            <p><strong>Food Items:</strong></p>
+                            <p>Mushroom Risotto - $ 13</p>
+                            <p>Carbonara - $ 13</p>
+                            <p>Cream of corn soup - $ 13</p>
+                            <p>Lemon tea - $ 13</p>
+                        </div>
+                        <br>
+
+                        <p><strong>Total Price:</strong> $ 52</p>
+                        <button class="pickup" data-order-number="1" onclick="toggleArrivedButton(this)">Pickup</button>
+                        <button class="arrived" data-order-number="1" style="display: none;">Arrived</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Restaurant</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Customer </button>
+                    </div>
+
+                    <div class="order" data-order-number="2">
+                        <a id="mu-order2"></a>
+                        <h2>Order 2</h2>
+                        <p><strong>Order ID:</strong> 10105</p>
+                        <p><strong>Status:</strong> Prepareing Meal</p>
+                        <p><strong>Time:</strong> October 24, 2023 1:05 PM</p>
+                        <p><strong>Delivery Address:</strong> 10B Black's Link, Tai Tam, Hong Kong Island, Hong Kong</p>
+                        <img src="..\image\map2.png" width="600" height="400">
+
+                        <br>
+
+                        <div class="order-food-list">
+                            <p><strong>Food Items:</strong></p>
+                            <p>Smoked Salmon Risotto - $ 15</p>
+                            <p>Bolognese Penne - $ 15</p>
+                            <p>Pumpkin soup - $ 15</p>
+                            <p>Matcha - $ 15</p>
+                        </div>
+                        <br>
+
+                        <p><strong>Total Price:</strong> $ 60</p>
+                        <button class="pickup" data-order-number="2" onclick="toggleArrivedButton(this)">Pickup</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Restaurant</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Customer </button>
+
+                    </div>
+
+                    <div class="order" data-order-number="3">
+                        <a id="mu-order3"></a>
+                        <h2>Order 3</h2>
+                        <p><strong>Order ID:</strong> 10106</p>
+                        <p><strong>Status:</strong> Delivering...</p>
+                        <p><strong>Time:</strong> October 24, 2023 1:07 PM</p>
+                        <p><strong>Delivery Address:</strong> 18 Ching Hiu Rd, New Territories, Hong Kong</p>
+                        <img src="..\image\map3.png" width="600" height="400">
+
+                        <br>
+
+                        <div class="order-food-list">
+                            <p><strong>Food Items:</strong></p>
+                            <p>Gillette Pork Chop Rice - $ 20</p>
+                            <p>Bolognese lasagne - $ 18</p>
+                            <p>Borscht - $ 18</p>
+                            <p>Red Tea - $ 20</p>
+                        </div>
+                        <br>
+
+                        <p><strong>Total Price:</strong> $ 76</p>
+                        <button class="pickup" data-order-number="3" onclick="toggleArrivedButton(this)">Pickup</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Restaurant</button>
+                        <button class="Contact" id="openModal" onclick="openModal()">Contact Customer </button>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <button id="scrollTopBtn" title="Go to top">Top</button>
+    </div>
+
+    <footer> <!-- footer-->
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+    </footer>
+
+    </div>
+
+</body>
+
+</html>
+
+<!-- add_to_cart ref= https://www.flaticon.com/free-icon/add-to-cart_3523885 -->
+<!-- T&C ref = https://www.flaticon.com/free-icon/user_8005815?term=accept&page=1&position=29&origin=search&related_id=8005815-->
+<!--profile ref = https://www.flaticon.com/free-icon/account_3033143?term=profile&page=1&position=11&origin=search&related_id=3033143-->

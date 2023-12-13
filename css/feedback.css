@@ -1,0 +1,61 @@
+/* Feedback Form Styling */
+
+/* Styling for the entire feedback section */
+.feedback-section {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ad9378;
+  border-radius: 15px;
+  background: #ffffff;
+  backdrop-filter: blur(30px); /* Apply a blur effect to the background */
+}
+
+/* Styling for input groups (labels, selects, and textareas) */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #5a4436;
+}
+
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ad9378;
+  border-radius: 4px;
+  background: #f5e9db;
+  color: #5a4436;
+}
+
+/* Styling for the submit button */
+.submit-btn {
+  padding: 0.5rem 1rem;
+  background-color: rgb(236, 128, 108);
+  color: #000000;
+  border: 1px solid #ad9378;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  outline: none; /* Remove the default outline on focus */
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+  background-color: rgb(196, 98, 78); /* Slightly darker on hover */
+  transform: scale(1.05); /* A subtle grow effect on hover */
+}
+
+/* Button focus effect */
+.submit-btn:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3), 0 0 0 5px #ad9378; /* Distinct focus ring */
+}
+
+/* Button active (click) effect */
+.submit-btn:active {
+  transform: scale(0.95); /* A subtle shrink effect when the button is clicked */
+}

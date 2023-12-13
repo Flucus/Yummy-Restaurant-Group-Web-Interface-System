@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant</title>
+    <script type="text/javascript" src="..\jslib/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+    <link rel="stylesheet" type="text/css" href="..\css\index.css">
+    <link rel="stylesheet" type="text/css" href="..\css\checkout.css">
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    <script src="..\script\index.js"></script>
+    <script src="..\script\checkout.js"></script>
+
+
+</head>
+
+<!--order.html, checkout.html, food1.html  0 use, just for design page. 
+    check.html(save successful and fail case)
+    remember change var,class,id name
+    all CSS design is Arrange in order-->
+
+<body>
+    <div class="page-container">
+        <div class="content-container"> <!-- content-container (logo, title, header,login button)-->
+
+            <div class="title-image">
+                <img src="..\image\restaurant_title.png" alt="">
+            </div>
+            <div class="site-branding-text">
+                <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+            </div>
+            <div class="header-container">
+                <div id="header">
+
+
+                    <div class="Login-btn">
+                        <a href="login.html">
+                            <button class="login" id="login-btn">Login</button>
+                        </a>
+                        <img src="..\image\profile.png" alt="profile" class="profile-ico" id="profile-ico"
+                            onclick="togglePopup()"
+                            onkeydown="if(event.key === 'Enter' || event.key === ' ') { togglePopup(); event.preventDefault(); }"
+                            tabindex="0">
+                        <div class="profile" id="profile">
+                            <label id="nickname">Hi, </label>
+
+                            <a href="#" onclick="showProfile()">
+                                <button class="view-profile" id="view-profile">View Profile</button>
+                            </a>
+
+                            <a href="Menu_Management.html">
+                                <button class="view-profile" id="view-profile">Edit Menu</button>
+                            </a>
+
+                            <a href="Order_Management.html">
+                                <button class="view-profile" id="view-profile">Order Management</button>
+                            </a>
+
+                            <a href="#">
+                                <button class="logout" id="logout_button">Logout</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contactModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Edit Food</h2>
+                    <form id="editFoodForm">
+                        <label for="food-name">Food Name:</label>
+                        <input type="text" id="food-name" name="food-name" value="Mushroom Risotto">
+                        <label for="food-price">Food Price:</label>
+                        <input type="text" id="food-price" name="food-price" value="13">
+                        <label for="food-description">Food Description:</label>
+                        <textarea id="food-description" name="food-description" rows="4"
+                            cols="50">Indulge in our delicious Mushroom Risotto, made with perfectly cooked Arborio rice and a creamy mushroom sauce.</textarea>
+                        <label for="food-image">Food Image:</label>
+                        <input type="file" id="food-image" name="food-image">
+                        <br />
+                        <button type="submit" class="save-btn">Save</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="editFoodModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Edit Food</h2>
+                    <form id="editFoodForm">
+                        <label for="food-name1">Food Name:</label>
+                        <input type="text" id="food-name" name="food-name" value="Smoked Salmon Risotto">
+                        <label for="food-price1">Food Price:</label>
+                        <input type="text" id="food-price" name="food-price" value="15">
+                        <label for="food-description1">Food Description:</label>
+                        <textarea id="food-description" name="food-description" rows="4"
+                            cols="50">This dish featurestender pieces of smoked salmon combined with creamy risotto rice, all topped with a drizzle of lemon-infused olive oil.</textarea>
+                        <label for="food-image1">Food Image:</label>
+                        <input type="file" id="food-image" name="food-image">
+                        <br />
+                        <button type="submit" class="save-btn">Save</button>
+
+                    </form>
+                </div>
+            </div>
+            <!----------------------------------------------------------->
+
+            <div id="food-container"> <!-- food-container (menu, food, cart )-->
+                <div class="main">
+                    <div class="food-category">
+                        <a href="#mu-rice">Rice</a>
+                        <a href="#mu-noodles">Noodles</a>
+                        <a href="#mu-soup">Soup</a>
+                        <a href="#mu-drinks">Drinks</a>
+                        <br />
+                        <a href="add_item.html" id="new_food">Add New Food</a>
+                    </div>
+
+                    <div class="food-main"> <!-- food-main (food design, checkout form, order list)-->
+
+
+
+                        <h1>Menu Management</h1>
+
+                        <div class="food-design rice"> <!-- food design-->
+                            <a id="mu-rice"></a>
+                            <h2>Rice</h2>
+                            <div class="food-grid">
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Indulge in our delicious Mushroom Risotto, made with perfectly cooked Arborio
+                                        rice and a creamy mushroom sauce.
+
+                                    </div>
+                                    <div button class="edit-item"><img src="..\image\edit.png" alt="edit_item"
+                                            id="openModal" onclick="openModal()"></div>
+                                    <img src="..\image\Mushroom Risotto.png" alt="Mushroom Risotto" class="food-photo">
+                                    <p>Mushroom Risotto</p>
+                                    <p>Price : $ 13</p>
+
+                                </div>
+
+
+
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        This dish features
+                                        tender pieces of smoked salmon combined with creamy risotto rice, all topped
+                                        with a drizzle of lemon-infused olive oil.
+                                    </div>
+                                    <div button class="edit-item"><img src="..\image\edit.png" alt="edit_item"
+                                            id="openEditFoodModal" onclick="openEditFoodModal()"></div>
+                                    <img src="..\image\Smoked Salmon Risotto.png" alt="Smoked Salmon Risotto"
+                                        class="food-photo">
+                                    <p>Smoked Salmon Risotto</p>
+                                    <p>Price : $ 15</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Our Pumpkin Risotto is a delightful blend of creamy Arborio rice, roasted
+                                        pumpkin, and a hint of nutmeg.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Pumpkin Risotto.png" alt="Pumpkin Risotto" class="food-photo">
+                                    <p>Pumpkin Risotto</p>
+                                    <p>Price : $ 18</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Try our Gillette Pork Chop Rice, a classic Japanese dish that combines
+                                        tender
+                                        pork chops with seasoned rice.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Gillette Pork Chop Rice.png" alt="Gillette Pork Chop Rice"
+                                        class="food-photo">
+                                    <p>Gillette Pork Chop Rice</p>
+                                    <p>Price : $ 20</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Unadon is a delicious Japanese dish consisting of grilled eel served over a
+                                        bed
+                                        of steamed rice and drizzled with a savory soy-based sauce.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Unadon.png" alt="Unadon" class="food-photo">
+                                    <p>Unadon</p>
+                                    <p>Price : $ 30</p>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="food-design noodles"> <!-- food design-->
+                            <a id="mu-noodles"></a>
+                            <h2>Noodles</h2>
+                            <div class="food-grid">
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Delicious pasta dish made with eggs, cheese, pancetta, and black pepper.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Carbonara.png" alt="Carbonara" class="food-photo">
+                                    <p>Carbonara</p>
+                                    <p>Price : $ 13</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Classic Italian pasta dish with penne pasta and rich meaty Bolognese sauce.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Bolognese Penne.png" alt="Bolognese Penne" class="food-photo">
+                                    <p>Bolognese Penne</p>
+                                    <p>Price : $ 15</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Enjoy our delicious Bolognese Lasagne, made with layers of tender pasta,
+                                        rich
+                                        Bolognese sauce, and creamy béchamel.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Bolognese lasagne.png" alt="Bolognese lasagne"
+                                        class="food-photo">
+                                    <p>Bolognese lasagne</p>
+                                    <p>Price : $ 18</p>
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Indulge in our Bolognese Spaghetti, featuring al dente pasta tossed in a
+                                        flavorful Bolognese sauce made from a blend of ground meat, tomatoes, and
+                                        aromatic herbs.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Bolognese spaghetti.png" alt="Bolognese spaghetti"
+                                        class="food-photo">
+                                    <p>Bolognese spaghetti</p>
+                                    <p>Price : $ 20</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Indulge in the delightful flavors of our Ham Macaroni. This classic dish
+                                        features
+                                        tender macaroni pasta tossed in a creamy cheese sauce and topped with savory
+                                        pieces of ham.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\ham macaroni.png" alt="Ham Macaroni" class="food-photo">
+                                    <p>Ham Macaroni</p>
+                                    <p>Price : $ 18</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="food-design soup"> <!-- food design-->
+                            <a id="mu-soup"></a>
+                            <h2>Soup</h2>
+                            <div class="food-grid">
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Indulge in the creamy goodness of our Cream of Corn Soup. Made from fresh
+                                        corn
+                                        kernels, simmered to perfection, and blended with a touch of cream.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Cream of corn soup.png" alt="Cream of corn soup"
+                                        class="food-photo">
+                                    <p>Cream of corn soup</p>
+                                    <p>Price : $ 13</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Our Pumpkin Soup is a delightful blend of roasted pumpkin, spices, and a
+                                        hint of
+                                        sweetness.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Pumpkin soup.png" alt="Pumpkin soup" class="food-photo">
+                                    <p>Pumpkin soup</p>
+                                    <p>Price : $ 15</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Try our classic Borscht, a hearty and flavorful beet soup that's a beloved
+                                        dish
+                                        in Eastern European cuisine.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Borscht.png" alt="Borscht" class="food-photo">
+                                    <p>Borscht</p>
+                                    <p>Price : $ 18</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Experience the rich and velvety flavors of our Bisque, a creamy seafood soup
+                                        made
+                                        with lobster or crab.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Bisque.png" alt="Bisque" class="food-photo">
+                                    <p>Bisque</p>
+                                    <p>Price : $ 20</p>
+
+                                </div>
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Indulge in the creamy goodness of our Cheese Soup. Made from a blend of rich
+                                        cheeses, this soup is a comforting delight for your taste buds.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Cheese Soup.png" alt="Cheese Soup" class="food-photo">
+                                    <p>Cheese Soup</p>
+                                    <p>Price : $ 13</p>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="food-design drinks"> <!-- food design-->
+                            <a id="mu-drinks"></a>
+                            <h2>Drinks</h2>
+                            <div class="food-grid">
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Refresh yourself with our zesty Lemon Tea.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\lemon tea.png" alt="Lemon tea" class="food-photo">
+                                    <p>Lemon tea</p>
+                                    <p>Price : $ 13</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Experience the earthy and rich flavors of our Matcha tea.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Matcha.png" alt="Matcha" class="food-photo">
+                                    <p>Matcha</p>
+                                    <p>Price : $ 15</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Enjoy the bold and complex flavors of our Pu'er Tea, a fermented tea with a
+                                        rich
+                                        history.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Pu'er tea.png" alt="Pu'er tea" class="food-photo">
+                                    <p>Pu'er tea</p>
+                                    <p>Price : $ 18</p>
+
+                                </div>
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Savor the robust and comforting flavors of our Red Tea.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item">
+                                    </div>
+                                    <img src="..\image\red tea.png" alt="Red Tea" class="food-photo">
+                                    <p>Red Tea</p>
+                                    <p>Price: $20</p>
+                                </div>
+
+
+                                <div class="food-card">
+                                    <div class="food-description">
+                                        Experience the rich and robust flavors of our Cappuccino.
+                                    </div>
+                                    <div class="edit-item"><img src="..\image\edit.png" alt="edit_item"></div>
+                                    <img src="..\image\Cappuccino.png" alt="Cappuccino" class="food-photo">
+                                    <p>Cappuccino</p>
+                                    <p>Price : $ 15</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="scrollTopBtn" title="Go to top">Top</button>
+        </div>
+
+        <footer> <!-- footer-->
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+
+<!-- add_to_cart ref= https://www.flaticon.com/free-icon/add-to-cart_3523885 -->
+<!-- T&C ref = https://www.flaticon.com/free-icon/user_8005815?term=accept&page=1&position=29&origin=search&related_id=8005815-->
+<!--profile ref = https://www.flaticon.com/free-icon/account_3033143?term=profile&page=1&position=11&origin=search&related_id=3033143-->

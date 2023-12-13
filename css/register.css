@@ -1,0 +1,109 @@
+/* ================= */
+/* Base Styles */
+/* ================= */
+
+/* Card Component Styles */
+.card {
+    --bg: #f0c292; /* Background color variable */
+    --hover-text: white; /* Hover text color variable */
+    max-width: 300px;
+    text-align: center;
+    background: var(--bg);
+    padding: 20px;
+    height: 600px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(.6, .4, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card__body {
+    color: rgb(FF, FF, FF); /* Text color */
+    line-height: 1.6em;
+    font-size: 1.1em;
+}
+
+.card> :not(span) {
+    transition: .3s cubic-bezier(.6, .4, 0, 1);
+}
+
+.card>strong {
+    display: block;
+    font-size: 1.6rem;
+    letter-spacing: -.035em;
+    margin-bottom: 1em;
+}
+
+.card span {
+    background: transparent;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--hover-text);
+    border-radius: 10px;
+    font-weight: bold;
+    top: 100%;
+    transition: all 0.5s cubic-bezier(.6, .4, 0, 1);
+}
+
+/* Button Component Styles */
+button {
+    padding: 17px 40px;
+    border-radius: 50px;
+    border: 2px solid #fffae5;
+    background-color: #5a4436;
+    color: #fffae5;
+    box-shadow: 0 0 10px rgba(255, 250, 229, 0.6);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all .3s ease;
+}
+
+/* ================= */
+/* Hover & Active States */
+/* ================= */
+
+/* Hover State for Card Component */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to top, #f0c292, #ad9378);
+}
+
+.card:hover span {
+    top: 0;
+    font-size: 1.5em;
+}
+
+.card:hover>div,
+.card:hover>strong {
+    opacity: 0.8;
+}
+
+/* Hover and Active States for Button Component */
+button:hover {
+    letter-spacing: 3px;
+    background-color: #d86c58;
+    color: white;
+    box-shadow: 0 8px 20px rgba(216, 108, 88, 0.5);
+}
+
+button:active {
+    background-color: #b75848;
+    color: white;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+    transition: 100ms;
+}

@@ -1,0 +1,85 @@
+/* ============== */
+/* Base Styles */
+/* ============== */
+
+/* General body styling and theme */
+body {
+    background: #f5e9db; /* Background color */
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: left;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Universal text color */
+.title-text,
+.field label,
+.field input,
+label,
+#forget,
+#signup a,
+.copyright-text,
+.site-title,
+a {
+    color: #5a4436; /* Universal text color */
+}
+
+/* Link Styling */
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    outline: 0;
+    color: #d86c58; /* Active link color */
+    text-decoration: none;
+}
+
+/* ============== */
+/* Content Styles */
+/* ============== */
+
+/* Styling for content section */
+#content {
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid #ad9378;
+    border-radius: 15px;
+    background: #ffffff; /* Content background color */
+    backdrop-filter: blur(30px);
+}
+
+/* Title Image and Site Title Styling */
+.title-image,
+.site-title {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Back button styling */
+.back {
+    cursor: pointer;
+    position: absolute;
+    margin-bottom: 10px;
+}
+
+/* Copyright Text */
+.copyright-text {
+    text-align: center;
+    color: #5a4436;
+}

@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "KC Restaurant",
+      "nickname": "Kelvin",
+      "password": "Kelvin123",
+      "email": "kelvin@vtc.com",
+      "phone": "12345678",
+      "type": "Restaurant"
+    },
+    {
+      "name": "Soman Tsang",
+      "nickname": "Soman",
+      "password": "Soman123",
+      "email": "soman@vtc.com",
+      "phone": "12345678",
+      "type": "Customer"
+    },
+    {
+      "name": "Oscar Ho",
+      "nickname": "Oscar",
+      "password": "Oscar123",
+      "email": "oscar@vtc.com",
+      "phone": "12345678",
+      "type": "Delivery Personnel"
+    }
+  ]
+}

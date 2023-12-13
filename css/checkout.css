@@ -1,0 +1,61 @@
+/* Layout and Structure */
+
+/* Add a comment to describe the purpose of this rule */
+form {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+/* Describe the styling for the checkout form */
+#checkout-form {
+    display: none;
+    border: 5px solid #95a5a6;
+    border-radius: 20px;
+}
+
+/* Typography */
+
+/* Comment explaining the styling for the checkout heading */
+#checkout_h1 {
+    font-size: 48px;
+    margin: auto;
+    text-decoration: underline;
+    color: #2c3e50;
+}
+
+/* Form Elements */
+
+/* Add comments for these common input styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+/* Interactivity */
+
+/* Explain the styling for the button */
+button[type="button"] {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Describe the hover effect for the button */
+button[type="button"]:hover {
+    background-color: #d35400;
+}

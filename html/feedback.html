@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata and Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Yummy Restaurant - Feedback</title>
+
+    <!-- Favicon and Stylesheets -->
+    <link rel="icon" href="..\image\restaurant.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="..\css\styles.css">
+    <link rel="stylesheet" type="text/css" href="..\css\feedback.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="title-image">
+            <img src="..\image\restaurant_title.png" alt="">
+        </div>
+        <div class="site-branding-text">
+            <h1 class="site-title"><a href="index.html" rel="home">Yummy Restaurant</a></h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Feedback Form Section -->
+        <section class="feedback-section">
+            <h2>Provide Your Feedback</h2>
+            <form action="submit_feedback.php" method="post">
+                <!-- Food Quality Rating -->
+                <div class="input-group">
+                    <label for="food-quality">Food Quality:</label>
+                    <select id="food-quality" name="food_quality">
+                        <option value="5">Excellent</option>
+                        <option value="4">Very Good</option>
+                        <option value="3">Good</option>
+                        <option value="2">Fair</option>
+                        <option value="1">Poor</option>
+                    </select>
+                </div>
+
+                <!-- Delivery Service Rating -->
+                <div class="input-group">
+                    <label for="delivery-service">Delivery Service:</label>
+                    <select id="delivery-service" name="delivery_service">
+                        <option value="5">Excellent</option>
+                        <option value="4">Very Good</option>
+                        <option value="3">Good</option>
+                        <option value="2">Fair</option>
+                        <option value="1">Poor</option>
+                    </select>
+                </div>
+
+                <!-- Additional Comments -->
+                <div class="input-group">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+
+                <!-- Submit Feedback Button -->
+                <a href="index.html"><button type="button" class="submit-btn">Submit Feedback</button></a>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="copyright-text">&copy; 2023 VTC. All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
